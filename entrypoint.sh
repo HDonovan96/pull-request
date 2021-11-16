@@ -85,6 +85,9 @@ COMMAND="hub pull-request \
 
 echo "$COMMAND"
 
+# Add github.falmouth.ac.uk as a regognised git host
+git config --global --add hub.host github.falmouth.ac.uk
+
 PR_URL=$(sh -c "$COMMAND")
 if [[ "$?" != "0" ]]; then
   exit 1
